@@ -37,12 +37,14 @@ function saveFile(req, res) {
       res.write(JSON.stringify({
         status: 'success',
       }));
+      console.log('success saved')
       res.end();
     }).catch(() => {
       res.writeHead(400, { 'Content-Type': 'application/json' });
       res.write(JSON.stringify({
         status: 'error',
       }));
+      console.log('error!');
       res.end();
     })
   });

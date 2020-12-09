@@ -11,4 +11,4 @@ function test() {
     })
 }
 
-test();
+test()
