@@ -18,6 +18,10 @@ function requestHandler(req, res){
     saveUploadedFile(req, res)
   }else if (/\/async\/[^\/]+$/.test(req.url)){
     saveFile(req, res);
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+    res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    res.setHeader("X-Powered-By", ' 3.2.1')
   }else{
     sendInvalidRequest(res);
   }
@@ -99,7 +103,7 @@ function sendUploadedFile(req, res){
 }
 
 function getFileName(url) {
-  return url.slice(url.lastIndexOf("/"));
+  return url.slice(url.lastIndexOf("/") + 1);
 }
 
 // 上传文件保存
