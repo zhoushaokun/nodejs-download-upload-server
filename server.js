@@ -8,6 +8,10 @@ const httpServer = http.createServer(requestHandler);
 httpServer.listen(port, () => {console.log('server is listening on port '+ port)});
 
 function requestHandler(req, res){
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+  res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.setHeader("X-Powered-By", ' 3.2.1');
   if(req.url === '/'){
     sendIndexHtml(res);
   }else if( req.url === '/list'){
@@ -18,10 +22,6 @@ function requestHandler(req, res){
     saveUploadedFile(req, res)
   }else if (/\/async\/[^\/]+$/.test(req.url)){
     saveFile(req, res);
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
-    res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    res.setHeader("X-Powered-By", ' 3.2.1')
   }else{
     sendInvalidRequest(res);
   }
