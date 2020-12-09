@@ -17,14 +17,14 @@ function requestHandler(req, res){
   }else if( /\/upload\/[^\/]+$/.test(req.url) ){
     saveUploadedFile(req, res)
   }else if (/\/async\/[^\/]+$/.test(req.url)){
-    saveFile(req);
+    saveFile(req, res);
   }else{
     sendInvalidRequest(res);
   }
 }
 
 // 添加监听
-function saveFile(req) {
+function saveFile(req, res) {
   let postData = '';
   req.addListener("data", function (postDataChunk) {
     postData += postDataChunk;
@@ -32,7 +32,19 @@ function saveFile(req) {
   req.addListener("end", function () {
     console.log('数据接收完毕');
     const data = JSON.parse(postData);//GET & POST  解释表单数据部分{name="zzl",email="zzl@sina.com"}
-    getFileAndSave(data.fileUrl, data.fileName);
+    getFileAndSave(data.fileUrl, data.fileName).then(() => {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.write(JSON.stringify({
+        status: 'success',
+      }));
+      res.end();
+    }).catch(() => {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.write(JSON.stringify({
+        status: 'error',
+      }));
+      res.end();
+    })
   });
 }
 
