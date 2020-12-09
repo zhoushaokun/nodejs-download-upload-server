@@ -1,0 +1,857 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://www.example.com/zsk/smdb/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1ep2ofdcjx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "t_address" ;
+	km-dev:modelPublicationTime "1607484290451"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"C_IDS\"}],[{\"columnName\":\"C_ID\"}],[{\"columnName\":\"C_SN\"}],[{\"columnName\":\"C_POSTCODE\"}],[{\"columnName\":\"C_ADDRESS\"}],[{\"columnName\":\"C_IS_DEFAULT\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"identifier_address_uri\"}],[{\"columnName\":\"C_IDS\"}],[{\"columnName\":\"C_ID\"}],[{\"columnName\":\"C_SN\"}],[{\"columnName\":\"C_POSTCODE\"}],[{\"columnName\":\"C_ADDRESS\"}],[{\"columnName\":\"identifier_t_address_C_IDS_uri\"}],[{\"columnName\":\"C_IS_DEFAULT\"}]]" ;
+	km-dev:hasModelLabel "t_address" ;
+	km-dev:hasBaseURI "http://www.example.com/zsk/smdb/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"C_ID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"identifier_address_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"address/\\\"+getValue(\\\"C_ID\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"identifier_address_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"C_IDS\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"identifier_t_address_C_IDS_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"# photo\\r\\nval = getValue(\\\"C_IDS\\\");\\r\\nif val :\\r\\n  return \\\"addressGroup/\\\"+val\\r\\nelse:\\r\\n  return \\\"addresGgroup/blank\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_IDS\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"identifier_t_address_C_IDS_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": true,
+                    \"baseURI\": \"http://www.example.com/zsk/smdb/\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"identifier_address_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.example.com/zsk/smdb/vocab/Address\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.example.com/zsk/smdb/vocab/Address1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/Address\",
+                    \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/Address1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/Address/Address1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"identifier_address_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"identifier_address_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"C_ID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/Address\",
+                    \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/Address1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.w3.org/2000/01/rdf-schema#label\",
+                    \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/Address/Address1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_ID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_ID\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"C_IDS\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [
+                    {
+                        \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup\",
+                        \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup1\",
+                        \"isPrimary\": false,
+                        \"isProvenance\": false,
+                        \"FullType\": \"http://www.w3.org/2000/01/rdf-schema#label\",
+                        \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup/AddressGroup1\"
+                    },
+                    {
+                        \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/Address\",
+                        \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/Address1\",
+                        \"isPrimary\": true,
+                        \"isProvenance\": false,
+                        \"FullType\": \"http://www.example.com/zsk/smdb/vocab/t_address_C_IDS\",
+                        \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/Address1\"
+                    }
+                ]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_IDS\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_IDS\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"C_ADDRESS\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/Address\",
+                    \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/Address1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.example.com/zsk/smdb/vocab/t_address_C_ADDRESS\",
+                    \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/Address/Address1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_ADDRESS\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_ADDRESS\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"C_POSTCODE\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/Address\",
+                    \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/Address1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.example.com/zsk/smdb/vocab/t_adress_C_POSTCODE\",
+                    \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/Address/Address1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_POSTCODE\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_POSTCODE\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"C_IS_DEFAULT\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/Address\",
+                    \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/Address1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.example.com/zsk/smdb/vocab/t_address_C_IS_DEFAULT\",
+                    \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/Address/Address1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_IS_DEFAULT\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_IS_DEFAULT\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"C_SN\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/Address\",
+                    \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/Address1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.example.com/zsk/smdb/vocab/t_address_C_SN\",
+                    \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/Address/Address1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_SN\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"C_SN\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"identifier_t_address_C_IDS_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup\",
+                    \"DomainId\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup/AddressGroup1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"identifier_t_address_C_IDS_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"identifier_t_address_C_IDS_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup1\",
+                    \"edgeId\": \"http://www.example.com/zsk/smdb/vocab/hasAddresssGroup\",
+                    \"edgeTargetUri\": \"http://www.example.com/zsk/smdb/vocab/AddressGroup\",
+                    \"edgeSourceId\": \"http://www.example.com/zsk/smdb/vocab/Address1\",
+                    \"edgeSourceUri\": \"http://www.example.com/zsk/smdb/vocab/Address\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea a rr:TriplesMap .
+
+_:node1ep2ofdcjx1 km-dev:hasTriplesMap km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea .
+
+km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx2 rr:tableName "t_address" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasLogicalTable _:node1ep2ofdcjx2 .
+
+km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea rr:logicalTable _:node1ep2ofdcjx2 ;
+	rr:subjectMap _:node1ep2ofdcjx3 .
+
+_:node1ep2ofdcjx1 km-dev:hasSubjectMap _:node1ep2ofdcjx3 .
+
+_:node1ep2ofdcjx3 km-dev:isPartOfMapping _:node1ep2ofdcjx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.example.com/zsk/smdb/vocab/Address1" ;
+	rr:class <http://www.example.com/zsk/smdb/vocab/Address> ;
+	rr:template "address/{C_ID}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_a6c792cf-1c3c-4d9f-8bcd-c0e92a9cd61a rr:predicate <http://www.example.com/zsk/smdb/vocab/hasAddresssGroup> .
+
+km-dev:RefObjectMap_19869217-9af5-4f5a-b459-c02845f7ecdf a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_63948c27-31d0-4886-bfca-0ff12a6925fb ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasObjectMap km-dev:RefObjectMap_19869217-9af5-4f5a-b459-c02845f7ecdf .
+
+km-dev:PredicateObjectMap_a6c792cf-1c3c-4d9f-8bcd-c0e92a9cd61a rr:objectMap km-dev:RefObjectMap_19869217-9af5-4f5a-b459-c02845f7ecdf .
+
+km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea rr:predicateObjectMap km-dev:PredicateObjectMap_a6c792cf-1c3c-4d9f-8bcd-c0e92a9cd61a .
+
+km-dev:PredicateObjectMap_a6c792cf-1c3c-4d9f-8bcd-c0e92a9cd61a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a6c792cf-1c3c-4d9f-8bcd-c0e92a9cd61a .
+
+km-dev:PredicateObjectMap_a2f9ee60-4aae-444d-a7e9-4c22a11bcf53 rr:predicate rdfs:label .
+
+_:node1ep2ofdcjx4 rr:column "C_ID" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasObjectMap _:node1ep2ofdcjx4 .
+
+km-dev:PredicateObjectMap_a2f9ee60-4aae-444d-a7e9-4c22a11bcf53 rr:objectMap _:node1ep2ofdcjx4 .
+
+km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea rr:predicateObjectMap km-dev:PredicateObjectMap_a2f9ee60-4aae-444d-a7e9-4c22a11bcf53 .
+
+km-dev:PredicateObjectMap_a2f9ee60-4aae-444d-a7e9-4c22a11bcf53 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a2f9ee60-4aae-444d-a7e9-4c22a11bcf53 .
+
+km-dev:PredicateObjectMap_70eb39a9-202a-47f4-81e2-143dd7b31aef rr:predicate <http://www.example.com/zsk/smdb/vocab/t_address_C_SN> .
+
+_:node1ep2ofdcjx5 rr:column "C_SN" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasObjectMap _:node1ep2ofdcjx5 .
+
+km-dev:PredicateObjectMap_70eb39a9-202a-47f4-81e2-143dd7b31aef rr:objectMap _:node1ep2ofdcjx5 .
+
+km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea rr:predicateObjectMap km-dev:PredicateObjectMap_70eb39a9-202a-47f4-81e2-143dd7b31aef .
+
+km-dev:PredicateObjectMap_70eb39a9-202a-47f4-81e2-143dd7b31aef a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_70eb39a9-202a-47f4-81e2-143dd7b31aef .
+
+km-dev:PredicateObjectMap_6b6540b5-aaf7-48a2-a6f3-8aa43a7352d5 rr:predicate <http://www.example.com/zsk/smdb/vocab/t_adress_C_POSTCODE> .
+
+_:node1ep2ofdcjx6 rr:column "C_POSTCODE" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasObjectMap _:node1ep2ofdcjx6 .
+
+km-dev:PredicateObjectMap_6b6540b5-aaf7-48a2-a6f3-8aa43a7352d5 rr:objectMap _:node1ep2ofdcjx6 .
+
+km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea rr:predicateObjectMap km-dev:PredicateObjectMap_6b6540b5-aaf7-48a2-a6f3-8aa43a7352d5 .
+
+km-dev:PredicateObjectMap_6b6540b5-aaf7-48a2-a6f3-8aa43a7352d5 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6b6540b5-aaf7-48a2-a6f3-8aa43a7352d5 .
+
+km-dev:PredicateObjectMap_37f00af4-d685-446c-b02d-f054c61f58e9 rr:predicate <http://www.example.com/zsk/smdb/vocab/t_address_C_ADDRESS> .
+
+_:node1ep2ofdcjx7 rr:column "C_ADDRESS" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasObjectMap _:node1ep2ofdcjx7 .
+
+km-dev:PredicateObjectMap_37f00af4-d685-446c-b02d-f054c61f58e9 rr:objectMap _:node1ep2ofdcjx7 .
+
+km-dev:TriplesMap_2a632778-7a53-4eaf-be87-8ab85c3127ea rr:predicateObjectMap km-dev:PredicateObjectMap_37f00af4-d685-446c-b02d-f054c61f58e9 .
+
+km-dev:PredicateObjectMap_37f00af4-d685-446c-b02d-f054c61f58e9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_37f00af4-d685-446c-b02d-f054c61f58e9 .
+
+km-dev:TriplesMap_63948c27-31d0-4886-bfca-0ff12a6925fb a rr:TriplesMap .
+
+_:node1ep2ofdcjx1 km-dev:hasTriplesMap km-dev:TriplesMap_63948c27-31d0-4886-bfca-0ff12a6925fb .
+
+km-dev:TriplesMap_63948c27-31d0-4886-bfca-0ff12a6925fb km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx8 rr:tableName "t_address" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasLogicalTable _:node1ep2ofdcjx8 .
+
+km-dev:TriplesMap_63948c27-31d0-4886-bfca-0ff12a6925fb rr:logicalTable _:node1ep2ofdcjx8 ;
+	rr:subjectMap _:node1ep2ofdcjx9 .
+
+_:node1ep2ofdcjx1 km-dev:hasSubjectMap _:node1ep2ofdcjx9 .
+
+_:node1ep2ofdcjx9 km-dev:isPartOfMapping _:node1ep2ofdcjx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.example.com/zsk/smdb/vocab/AddressGroup1" ;
+	rr:class <http://www.example.com/zsk/smdb/vocab/AddressGroup> ;
+	rr:template "{identifier_t_address_C_IDS_uri}" .
+
+km-dev:PredicateObjectMap_46f1590a-7567-4cd8-be5a-2d5b364d7fb1 rr:predicate rdfs:label .
+
+_:node1ep2ofdcjx10 rr:column "C_IDS" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasObjectMap _:node1ep2ofdcjx10 .
+
+km-dev:PredicateObjectMap_46f1590a-7567-4cd8-be5a-2d5b364d7fb1 rr:objectMap _:node1ep2ofdcjx10 .
+
+km-dev:TriplesMap_63948c27-31d0-4886-bfca-0ff12a6925fb rr:predicateObjectMap km-dev:PredicateObjectMap_46f1590a-7567-4cd8-be5a-2d5b364d7fb1 .
+
+km-dev:PredicateObjectMap_46f1590a-7567-4cd8-be5a-2d5b364d7fb1 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ep2ofdcjx1 .
+
+_:node1ep2ofdcjx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_46f1590a-7567-4cd8-be5a-2d5b364d7fb1 .

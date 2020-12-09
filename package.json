@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-download-upload-server",
+  "version": "1.0.0",
+  "description": "Node.JS simple server to upload and download files",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhoushaokun/nodejs-download-upload-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhoushaokun/nodejs-download-upload-server/issues"
+  },
+  "homepage": "https://github.com/zhoushaokun/nodejs-download-upload-server#readme",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
