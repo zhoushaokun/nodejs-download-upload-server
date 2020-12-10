@@ -27,6 +27,17 @@ function requestHandler(req, res){
   }
 }
 
+function parseUrl(query){
+    var queryArr = query.split("&");
+    var obj = {};
+    queryArr.forEach(function(item){
+        var value = item.split("=")[1];
+        var key = item.split("=")[0];
+        obj[key] = value;
+    });
+    return obj;
+}
+
 // 添加监听
 function saveFile(req, res) {
   let postData = '';
@@ -35,8 +46,8 @@ function saveFile(req, res) {
   });
   req.addListener("end", function () {
     console.log('数据接收完毕');
-    const data = JSON.parse(postData);//GET & POST  解释表单数据部分{name="zzl",email="zzl@sina.com"}
-    getFileAndSave(data.fileUrl, data.fileName).then(() => {
+    const data = parseUrl(postData);//GET & POST  解释表单数据部分{name="zzl",email="zzl@sina.com"}
+    getFileAndSave(decodeURIComponent(data.fileUrl), data.fileName).then(() => {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.write(JSON.stringify({
         status: 'success',
